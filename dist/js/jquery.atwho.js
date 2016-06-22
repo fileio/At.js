@@ -217,6 +217,9 @@ App = (function() {
     })(this)).on('compositionend', (function(_this) {
       return function(e) {
         _this.isComposing = false;
+        setTimeout(function(e) {
+          return _this.dispatch(e);
+        });
         return null;
       };
     })(this)).on('keyup.atwhoInner', (function(_this) {
@@ -293,7 +296,6 @@ App = (function() {
       case KEY_CODE.DOWN:
       case KEY_CODE.UP:
       case KEY_CODE.CTRL:
-      case KEY_CODE.ENTER:
         $.noop();
         break;
       case KEY_CODE.P:
